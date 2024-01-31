@@ -23,12 +23,13 @@ function Form() {
 
   const handleGenderChange = (selectedGender) => {
     setGender(selectedGender);
-    setshowAnswers(true);
   };
 
+
   return (
-    <div className='container'>
-      <form onSubmit={handleSubmit}>
+    <>
+    <div className='container-form'>
+      <form>
         <h1 className='form_h1'>Preencha seus dados</h1>
         <label>Nome:</label>
         <input className='form_input' type="text" name="nome" value={inputValue.nome} onChange={handleChange} minlength="3" required={true} />
@@ -37,9 +38,11 @@ function Form() {
         <label>E-mail:</label>
         <input className='form_input' type="email" name="email" value={inputValue.email} onChange={handleChange} required={true} />
         <GenderFormItem selectedOption={gender} onOptionChange={handleGenderChange} />
-        <button className='btn' type="submit" onClick={showAnswers}>Enviar</button>
+        <button className='btn' type="submit" onClick={handleSubmit}>Enviar</button>
       </form>
+      </div>
 
+      <div className='container-answer'>
       {showAnswers && (
         <div>
           <h2>Respostas</h2>
@@ -57,9 +60,13 @@ function Form() {
           </p>
           <button className='btn' onClick={hideAnswers}>Limpar</button>
         </div>
+        
+
       )}
     </div>
+    </>
   );
 }
+
 
 export default Form;
