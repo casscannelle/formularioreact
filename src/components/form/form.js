@@ -27,7 +27,7 @@ function Form() {
     if (inputValue.nome.length < 3) {
       errors.nome = 'Por favor, digite seu nome';
     }
-    if (inputValue.idade === 0 || inputValue.idade === '0') {
+    if (inputValue.idade.length === 0) {
       errors.idade = 'Por favor, digite sua idade';
     }
     if (!inputValue.email.includes('@')) {
@@ -38,7 +38,7 @@ function Form() {
     }
     return errors;
   };
-    
+        
   const hideAnswers = (event) => {
     event.preventDefault();
     setshowAnswers(false);
@@ -52,13 +52,13 @@ function Form() {
         <h1 className='form_h1'>Preencha seus dados</h1>
         <label>Nome:</label>
         <input className='form_input' type="text" name="nome" value={inputValue.nome} onChange={handleChange} required />
-        {errors.nome && <p className="error-message">{errors.nome}</p>}
+        {showAnswers || !errors.nome ? null : <p className="error-message">{errors.nome}</p>}
         <label>Idade:</label>
         <input className='form_input' type="number" name="idade" value={inputValue.idade} onChange={handleChange} min="0" required />
-        {errors.idade && <p className="error-message">{errors.idade}</p>}
+        {showAnswers || !errors.idade ? null : <p className="error-message">{errors.idade}</p>}
         <label>E-mail:</label>
         <input className='form_input' type="email" name="email" value={inputValue.email} onChange={handleChange} required />
-        {errors.email && <p className="error-message">{errors.email}</p>}
+        {showAnswers || !errors.email ? null : <p className="error-message">{errors.email}</p>}
         <label>Gênero</label>
         <div>
           <input type='radio' name="gender" value="Feminino" id="feminino" checked={inputValue.gender === "Feminino"} onChange={handleChange} />
@@ -72,7 +72,7 @@ function Form() {
           <input type='radio' name="gender" value="Não informado" id="naoinformado" checked={inputValue.gender === "Não informado"} onChange={handleChange} />
           <label htmlFor="naoinformado">Prefiro não informar</label>
         </div>
-        {errors.gender && <p className="error-message">{errors.gender}</p>}
+        {showAnswers || !errors.gender ? null : <p className="error-message">{errors.gender}</p>}
         <button className='btn' type="submit" onClick={handleSubmit}>Enviar</button>
       </form>
       </div>
