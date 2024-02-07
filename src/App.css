@@ -7,8 +7,6 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 10px;
-  
-    
 }
 
 .form_h1, h2 {
@@ -25,11 +23,11 @@ h3 {
 
 .container-form,
 .container-answer {
-  max-width: 400px;
+  max-width: 360px;
   width: 100%;
   background: #ffffff5b;
   border-radius: 15px;
-  padding: 25px 30px;
+  padding: 25px 25px;
   margin-top: 5%;
 }
 
@@ -40,6 +38,7 @@ form {
   justify-content: space-around;
   width: 100%;
 }
+
 label {
   font-weight: 500;
   padding: 1%;
@@ -47,7 +46,7 @@ label {
 
 .form_input {
   padding: 5px;
-  margin: 1% 1% 5% 0;
+  margin: 1% 0 5% 0;
   width: 20rem;
   font-size: 14px;
   line-height: 20px;
