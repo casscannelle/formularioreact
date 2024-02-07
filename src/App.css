@@ -21,6 +21,12 @@ h3 {
   font-weight: 600;
 }
 
+.error-message {
+  color: #cf2c2c;
+  font-size: 12px;
+  margin-top: -12px;
+}
+
 .container-form,
 .container-answer {
   max-width: 360px;
@@ -31,6 +37,9 @@ h3 {
   margin-top: 5%;
 }
 
+.hide-container-answer {
+  display: none;
+}
 
 form {
   display: flex;
