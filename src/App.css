@@ -1,8 +1,8 @@
 body {
   background: linear-gradient(135deg, #00a6ac52, #a735949c);
   background-attachment: fixed;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -87,4 +87,45 @@ label {
 
 .btn:hover {
   background-color: rgba(46, 143, 127, 0.808);
+}
+
+.btn-filter {
+  font-size: 0.8rem;
+  align-items: center;
+  border: 0 none;
+  border-radius: 25px;
+  color: #fff;
+  background-color: rgb(64, 65, 64);
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-top: 1%;
+  padding: 5px 10px;
+  width: 30%;
+}
+
+.btn-filter:hover {
+  background-color: rgba(151, 155, 154, 0.808);
+}
+
+
+.btn-vermais{
+  font-size: 0.7rem;
+  align-items: center;
+  border: 0 none;
+  border-radius: 25px;
+  color: #1b1b1b;
+  background-color: rgb(224, 224, 224);
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-top: 1%;
+  padding: 5px 7px;
+  width: 20%;
+}
+
+.btn-vermais:hover {
+  cursor: pointer;
+  background-color: rgba(151, 155, 154, 0.808);
+
+  
+
 }
