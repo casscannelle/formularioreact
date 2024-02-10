@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import React from 'react';
+
 
 function Form() {
   const [inputValue, setInputValue] = useState({ nome: '', email: '', idade: '', gender: 'Feminino' });
@@ -7,6 +9,7 @@ function Form() {
   const [responses, setResponses] = useState([]);
   const [selectedResponse, setSelectedResponse] = useState(null);
   const [sortOrder, setSortOrder] = useState('newest');
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
