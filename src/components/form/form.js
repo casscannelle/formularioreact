@@ -10,6 +10,7 @@ function Form() {
   const [selectedResponse, setSelectedResponse] = useState(null);
   const [sortOrder, setSortOrder] = useState('newest');
   
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -115,7 +116,7 @@ function Form() {
           </button>
         </form>
       </div>
-
+      {/* Respostas por nome */}
       <div className={`container-answer ${showAnswers ? '' : 'hide-container-answer'}`}>
         {showAnswers && (
           <div>
@@ -126,7 +127,7 @@ function Form() {
               </button>
               </>
             
-            {/* Respostas por nome */}
+            
             <ol>
               {getSortedResponses().map((response, index) => (
                 <li key={index} >
@@ -164,6 +165,7 @@ function Form() {
             <p>
               <strong>Gênero:</strong> {selectedResponse.gender}
             </p>
+            <button className="btn" onClick={hideModal}>Fechar</button>
           </div>
         </div>
       )}
