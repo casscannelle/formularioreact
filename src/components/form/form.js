@@ -75,7 +75,7 @@ function Form() {
 
 
   return (
-    <>
+    <div className='container-wrapper'>
       <div className='container-form'>
         <form>
         <h1 className='form_h1'>Preencha seus dados</h1>
@@ -127,7 +127,7 @@ function Form() {
               ))}
             </ol>
             <button className='btn' onClick={hideAnswers}>
-              Limpar
+              Fechar
             </button>
           </div>
         )}
@@ -157,7 +157,7 @@ function Form() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
