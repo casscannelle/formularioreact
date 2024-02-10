@@ -1,11 +1,9 @@
 body {
   background: linear-gradient(135deg, #00a6ac52, #a735949c);
   background-attachment: fixed;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  display: flexbox;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   padding: 10px;
 }
 
@@ -39,6 +37,12 @@ h3 {
 
 .hide-container-answer {
   display: none;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 2%; 
 }
 
 form {
