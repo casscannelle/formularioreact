@@ -11,7 +11,7 @@ function Form() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputValue((prevInputValue) => ({ ...prevInputValue, [name]: value }));
-    setShowAnswers(false);
+    
   };
 
   const handleSubmit = (event) => {
@@ -73,6 +73,11 @@ function Form() {
       : [...responses].sort((a, b) => a.timestamp - b.timestamp);
   };
 
+  const deleteAnswer = (index) => {
+    const updatedResponses = [...responses];
+    updatedResponses.splice(index, 1);
+    setResponses(updatedResponses);
+  }
 
   return (
     <div className='container-wrapper'>
@@ -122,7 +127,9 @@ function Form() {
             <ol>
               {getSortedResponses().map((response, index) => (
                 <li key={index} >
-                  {response.nome} <button className="btn-vermais" onClick={() => showResponseModal(response)}>Ver mais</button>
+                  {response.nome} 
+                  <button className="btn-vermais" onClick={() => showResponseModal(response)}>Ver mais</button>
+                  <button className="btn-vermais" onClick={() => deleteAnswer(index)}>Excluir</button>
                 </li>
               ))}
             </ol>
